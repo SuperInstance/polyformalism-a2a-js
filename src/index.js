@@ -178,6 +178,8 @@ export function checkDraft(sender, receiverCapacity, speedFactor = 0) {
 
 // Re-export LLM encoder
 export { LLMEncoder } from './llm-encoder.js';
+// Re-export DivergenceAwareTolerance
+export { DivergenceAwareTolerance, DriftTrend, PrecisionClass } from './divergence-tolerance.js';
 
 /**
  * Tolerance stack: ε_total = √(ε₁² + ε₂² + ... + ε₉²)
