@@ -176,6 +176,9 @@ export function checkDraft(sender, receiverCapacity, speedFactor = 0) {
   return { baseDraft: base, effectiveDraft: effective, receiverCapacity, margin, isSafe: margin > 0 };
 }
 
+// Re-export LLM encoder
+export { LLMEncoder } from './llm-encoder.js';
+
 /**
  * Tolerance stack: ε_total = √(ε₁² + ε₂² + ... + ε₉²)
  */
