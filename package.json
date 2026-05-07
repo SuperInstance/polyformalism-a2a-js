@@ -4,6 +4,11 @@
   "description": "9-channel polyglot communication framework for multi-agent alignment",
   "main": "src/index.js",
   "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./intent-compile": "./src/intent-compile.js",
+    "./llm-encoder": "./src/llm-encoder.js"
+  },
   "scripts": {
     "test": "node --test test/test.js"
   },

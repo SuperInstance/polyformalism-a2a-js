@@ -2,7 +2,7 @@
 
 **9-channel polyglot communication framework for multi-agent alignment.**
 
-Zero dependencies. Works in Node.js and browsers.
+Zero dependencies. ESM-only. Works in Node.js and browsers.
 
 ## Install
 
@@ -49,11 +49,37 @@ console.log(fitting.name); // "DeepSeaSeal"
 
 ## API
 
-- `IntentVector` — 9D intent profile with salience + tolerance
-- `checkAlignment(sender, receiver)` — alignment report with cosine similarity
-- `checkDraft(sender, capacity, speedFactor)` — draft safety check
-- `toleranceStack(profile)` — total tolerance ε_total
-- `selectFitting(stakes)` — hydraulic fitting selection
+### Core
+
+- `IntentVector` — 9D intent profile with salience + tolerance (backed by `Float64Array`)
+- `checkAlignment(sender, receiver)` — alignment report with cosine similarity, draft margin, and per-channel warnings
+- `checkDraft(sender, capacity, speedFactor)` — draft safety check with dynamic amplification
+- `toleranceStack(profile)` — RSS tolerance: ε_total = √(ε₁² + ε₂² + ... + ε₉²)
+- `selectFitting(stakes)` — hydraulic fitting selection (HoseClamp → DeepSeaSeal)
+
+### LLM Encoder
+
+```js
+import { LLMEncoder } from '@superinstance/polyformalism-a2a';
+
+const encoder = new LLMEncoder({
+  endpoint: 'https://api.deepinfra.com/v1/openai',
+  apiKey: 'your-key',
+  model: 'ByteDance/Seed-2.0-mini',
+});
+
+const profile = await encoder.encode('The submarine hull pressure is critical');
+```
+
+Model-driven intent extraction via any OpenAI-compatible API. Replaces heuristic keyword matching with structured 9-channel extraction.
+
+### Intent Compilation
+
+```js
+import { classifyPrecision, batchClassify } from '@superinstance/polyformalism-a2a/intent-compile';
+```
+
+Intent-directed constraint compilation — classify precision (INT8/INT16/INT32/DUAL) from C9 stakes channel.
 
 ## License
 
