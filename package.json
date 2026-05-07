@@ -1,0 +1,17 @@
+{
+  "name": "@superinstance/polyformalism-a2a",
+  "version": "0.1.0",
+  "description": "9-channel polyglot communication framework for multi-agent alignment",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/test.js"
+  },
+  "keywords": ["constraint", "alignment", "agent", "communication", "polyformalism", "a2a"],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperInstance/polyformalism-a2a-js"
+  },
+  "author": "SuperInstance"
+}
