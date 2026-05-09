@@ -1,5 +1,15 @@
 # @superinstance/polyformalism-a2a
 
+
+## Meta
+
+**Domain:** constraint-theory
+**Depends on:** —
+**Depended by:** —
+**Implements:** 9-channel polyglot communication framework for multi-agent alignment (JS/Node.js...
+**Related:** —
+
+
 **9-channel polyglot communication framework for multi-agent alignment.**
 
 Zero dependencies. ESM-only. Works in Node.js and browsers.
